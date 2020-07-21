@@ -1,9 +1,9 @@
 node {
     stage("Clean up"){  
         sh "ls"
-        echo "I want to delete stuff"
+        echo "I want to get back stuff"
         sh "git status"
-        sh "rm server.js package.json"
-        sh "ls"
+        sh "git pull"
+        def new_image = docker.build("new_image")
     }
 }
